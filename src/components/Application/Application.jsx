@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "../Home/Home";
-import Upload from "../Upload/Upload";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from '../Login/Login'
+import SignUp from '../SignUp/SignUp'
+import Home from '../Home/Home';
 function Application() {
-  return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/Upload" component={Upload}>
-            {/* <Upload /> */}
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+	return (
+		<div>
+			<Router>
+				<Switch>
+					<Route path="/login" component={Login}/>
+					<Route path="/signup" component={SignUp}/>
+					<Route path="/" component={Home} />
+				</Switch>
+			</Router>
+		</div>
+	);
 }
 export default Application;

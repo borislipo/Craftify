@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Application from './components/Application/Application';
+import UserProvider from './components/UserProvider/UserProvider';
 
 function App() {
 	return (
 		<div className="App">
-			<Application />
+			<UserProvider>
+				<Application />
+			</UserProvider>
 		</div>
 	);
 }
