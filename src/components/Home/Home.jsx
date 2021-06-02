@@ -47,12 +47,12 @@ function Home(props) {
 				<Container fluid className="HomeContainer">
 					<Row className="mb-5 mt-5 d-flex HomeButton">
 						<Col>
-							<Button variant="primary" onClick={handleUpload}>
+							<Button  className="squareButton" variant="primary" onClick={handleUpload}>
 								Upload Images
 							</Button>
 						</Col>
 						<Col>
-							<Button variant="primary" onClick={handleCamera}>
+							<Button className="squareButton" variant="primary" onClick={handleCamera}>
 								Craftify!
 							</Button>{' '}
 							<input
@@ -65,29 +65,29 @@ function Home(props) {
 							/>
 						</Col>
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button  className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 					</Row>
 
 					<Row className="mb-5 mt-5 d-flex HomeButton">
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button  className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 						<Col />
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button  className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 					</Row>
 
 					<Row className="mb-5 mt-5 d-flex HomeButton">
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 						<Col>
-							<Button variant="primary">Other Feature</Button>
+							<Button className="squareButton" variant="primary">Other Feature</Button>
 						</Col>
 					</Row>
 				</Container>

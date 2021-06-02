@@ -1,0 +1,10 @@
+
+body {
+    background-image: url("https://res.cloudinary.com/drcoopxns/image/upload/v1622656849/imageedit_1_4954371783_fnrmdo.png");
+    min-height: 100vh;
+    
+}
+
+body, html{
+    min-height: 100vh;
+}

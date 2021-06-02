@@ -5,6 +5,26 @@
     
 }
 
+.squareButton{
+   background: linear-gradient(306deg, rgba(249,63,251,1) 0%, rgba(70,252,244,0.846673703661152) 100%);
+
+border:ridge 0px #000000;
+-moz-border-radius-topleft: 23px;
+-moz-border-radius-topright:24px;
+-moz-border-radius-bottomleft:25px;
+-moz-border-radius-bottomright:25px;
+-webkit-border-top-left-radius:23px;
+-webkit-border-top-right-radius:24px;
+-webkit-border-bottom-left-radius:25px;
+-webkit-border-bottom-right-radius:25px;
+border-top-left-radius:23px;
+border-top-right-radius:24px;
+border-bottom-left-radius:25px;
+border-bottom-right-radius:25px;
+}
+
+
+
 .HomeButton > * >* {
     height: 80px;
     width: 80px;
