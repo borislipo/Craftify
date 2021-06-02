@@ -19,15 +19,8 @@ function Home(props) {
 	};
 	return (
 		<React.Fragment>
-			<Row className="HeaderContainer">
-				<Col>
-					<Image placeholder="Logo" />
-				</Col>
-				<Col>
-					<h1>Some User</h1>
-				</Col>
-			</Row>
-
+		<div className="d-flex flex-column">
+			<Image className="Logo" src="https://res.cloudinary.com/drcoopxns/image/upload/v1622640448/workigy_logo_ymiodi.jpg"/>
 			<Container fluid className="HomeContainer">
 				<Row className="mb-5 mt-5 d-flex HomeButton">
 					<Col>
@@ -74,7 +67,8 @@ function Home(props) {
 						<Button variant="primary">Other Feature</Button>
 					</Col>
 				</Row>
-			</Container>
+				</Container>
+				</div>
 		</React.Fragment>
 	);
 }
