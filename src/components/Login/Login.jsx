@@ -1,18 +1,22 @@
 import { useState } from 'react';
-import { signInWithGoogle, signUpWithEmailAndPassword, signInWithEmailAndPassword } from '../../lib/firebase'
+import { useHistory } from 'react-router-dom';
+import { signInWithGoogle, signInWithEmailAndPassword } from '../../lib/firebase'
 
 const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    let history = useHistory();
 
     const handleLogIn = async (event) => {
         event.preventDefault()
         try {
-            await signInWithEmailAndPassword(email, password)
+            const user = await signInWithEmailAndPassword(email, password)
+            console.log(user);
+            setEmail('')
+            setPassword('')
         } catch (err) {
-            console.log(err)
-            return alert('password and email  dont match')
+            return alert(err.message)
         }
     }
 
@@ -21,13 +25,12 @@ const Login = (props) => {
         try {
             await signInWithGoogle()
         } catch (err) {
-            console.log(err)
-            return alert("something went wrong")
+            return alert(err.message)
         }
     }
 
-    const handleSignUp = async (event) => {
-
+    const redirect = () => {
+        history.push('/signup')
     }
 
 
@@ -62,7 +65,7 @@ const Login = (props) => {
             </div>
             <div>
                 <p>Dont have an account yet?</p>
-                <button>SignUp</button>
+                <button onClick={redirect}>SignUp</button>
             </div>
         </div>
     )

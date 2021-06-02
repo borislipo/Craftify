@@ -16,11 +16,13 @@ const SignUp = () => {
         }
         try{
             await signUpWithEmailAndPassword(user)
+            setName('')
+            setEmail('')
+            setPassword('')
         }catch(err){
             console.log(err)
             return console.log(err)
         }
-
     }
 
     return (
@@ -34,7 +36,7 @@ const SignUp = () => {
                         <label>Enter Full Name :</label>
                         <input 
                         type="text"
-                        onChange={(event) => SetName(event.target.value)}/>
+                        onChange={(event) => setName(event.target.value)}/>
                     </div>
                     <div className="emailInput">
                         <label>Enter Email :</label>

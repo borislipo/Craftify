@@ -28,6 +28,7 @@ export const signUpWithEmailAndPassword = async (user) => {
 export const signInWithEmailAndPassword = async (email, password) => {
 	const authUser = await auth.signInWithEmailAndPassword(email, password);
 	const user = await getUserDocument(authUser.user.uid);
+	user.uid = authUser.user.uid;
 	return user;
 };
 
