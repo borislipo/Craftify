@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 @media only screen and (min-width: 401px) {
   body {
     display: none;
@@ -8,20 +9,20 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .close {
+    background: none;
+  }
   .uploadWrapper {
+    padding: 20px;
     background-color: rgb(220, 239, 240);
-    width: 100vw;
-    height: 100vh;
     margin-top: 0;
     color: black;
   }
-
   .UploadText {
     padding: 5%;
     justify-content: center;
     display: flex;
   }
-
   .uploadList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -29,7 +30,6 @@
     list-style: none;
     margin-top: 5vh;
   }
-
   .uploadImageBtn {
     margin-top: 1vh;
     display: flex;
@@ -44,17 +44,15 @@
     letter-spacing: 0.2em;
     flex-direction: row;
   }
-
   .btnWrapper {
     display: flex;
     justify-content: center;
   }
-
   .PreviewImage {
     height: fit-content;
     width: fit-content;
   }
-  .PreviewImage > * {
+  .PreviewImage>* {
     object-fit: contain;
     height: 100px;
     width: 100%;
