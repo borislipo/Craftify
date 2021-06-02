@@ -27,9 +27,8 @@ const Login = (props) => {
     }
 
     const handleSignUp = async (event) => {
-        
-    }
 
+    }
 
 
     return (
@@ -38,7 +37,7 @@ const Login = (props) => {
             <form onSubmit={(event) => handleLogIn(event)} action="">
                 <div>
                     <div className="emailInput">
-                        <label htmlFor="">Email : </label>
+                        <label >Email : </label>
                         <input
                             required
                             type="email"
@@ -46,7 +45,7 @@ const Login = (props) => {
                             onChange={(event) => setEmail(event.target.value)} />
                     </div>
                     <div className="passwordInput">
-                        <label htmlFor="">Password : </label>
+                        <label >Password : </label>
                         <input
                             required
                             type="password"
@@ -60,6 +59,10 @@ const Login = (props) => {
             </form>
             <div className="googleLogIn">
                 <button onClick={(event) => handleLogInGoogle(event)} className="GoogleButton">Log In With Google</button>
+            </div>
+            <div>
+                <p>Dont have an account yet?</p>
+                <button>SignUp</button>
             </div>
         </div>
     )
