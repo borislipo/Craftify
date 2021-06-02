@@ -48,6 +48,7 @@ const Login = (props) => {
 							type="email"
 							placeholder="Enter your email"
 							onChange={(event) => setEmail(event.target.value)}
+                            value={email}
 						/>
 					</div>
                     <div className="passwordInput container d-flex  mt-4  align-items-center">
@@ -58,6 +59,7 @@ const Login = (props) => {
 							type="password"
 							placeholder="Enter your password"
 							onChange={(event) => setPassword(event.target.value)}
+                            value={password}
 						/>
 					</div>
 					<div className="LoginButton container d-flex justify-content-center mt-4">

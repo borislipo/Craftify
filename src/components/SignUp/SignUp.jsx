@@ -36,21 +36,27 @@ const SignUp = () => {
                         <input
                             className="inputName form-control"
                             type="text"
-                            onChange={(event) => setName(event.target.value)} />
+                            placeholder="Enter your full name"
+                            onChange={(event) => setName(event.target.value)}
+                            value={name} />
                     </div>
                     <div className=" container d-flex emailInput mt-3">
                         <label className="form-label">Email</label>
                         <input
                             className="inputEmail form-control"
                             type="email"
-                            onChange={(event) => setEmail(event.target.value)} />
+                            placeholder="Enter an email"
+                            onChange={(event) => setEmail(event.target.value)}
+                            value={email} />
                     </div>
                     <div className="passwordInput container d-flex mt-3">
                         <label className="form-label">Password</label>
                         <input
                             className="inputPass form-control"
                             type="password"
-                            onChange={(event) => setPassword(event.target.value)} />
+                            placeholder="Choose a password"
+                            onChange={(event) => setPassword(event.target.value)} 
+                            value={password}/>
                     </div>
                     <button 
                     className="btn btn-primary mt-3"
