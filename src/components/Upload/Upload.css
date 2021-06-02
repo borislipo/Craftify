@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 401px) {
+  body {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .uploadWrapper {
+    background-color: rgb(220, 239, 240);
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    color: black;
+  }
+
+  .UploadText {
+    padding: 5%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .uploadList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    list-style: none;
+    margin-top: 5vh;
+  }
+
+  .uploadImageBtn {
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    width: 50%;
+    background-color: #555554;
+    color: white;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-color: rgb(184, 177, 177);
+    letter-spacing: 0.2em;
+    flex-direction: row;
+  }
+
+  .btnWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .PreviewImage {
+    height: fit-content;
+    width: fit-content;
+  }
+  .PreviewImage > * {
+    object-fit: contain;
+    height: 100px;
+    width: 100%;
+  }
+  .uploadList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 3% 1% 3%;
+  }
+}
