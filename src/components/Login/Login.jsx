@@ -1,22 +1,49 @@
 import { useState } from 'react';
+import { signInWithGoogle, signUpWithEmailAndPassword, signInWithEmailAndPassword } from '../../lib/firebase'
 
 const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    return(
-        <div>
-            <h2>`Craftify :)`</h2>
-            <form action="">
+    const handleLogIn = async (event) => {
+        event.preventDefault()
+        try {
+            await signInWithEmailAndPassword(email, password)
+        } catch (err) {
+            console.log(err)
+            return alert('password and email  dont match')
+        }
+    }
+
+    const handleLogInGoogle = async (event) => {
+        event.preventDefault()
+        try {
+            await signInWithGoogle()
+        } catch (err) {
+            console.log(err)
+            return alert("something went wrong")
+        }
+    }
+
+    const handleSignUp = async (event) => {
+        
+    }
+
+
+
+    return (
+        <div className="d-flex flex-column justify-content-center">
+            <h2>Craftify </h2>
+            <form onSubmit={(event) => handleLogIn(event)} action="">
                 <div>
                     <div className="emailInput">
                         <label htmlFor="">Email : </label>
-                        <input 
-                        required
-                        type="email"
-                        placeholder="Enter your email"
-                        onChange={(event) => setEmail(event.target.value)}/>
+                        <input
+                            required
+                            type="email"
+                            placeholder="Enter your email"
+                            onChange={(event) => setEmail(event.target.value)} />
                     </div>
                     <div className="passwordInput">
                         <label htmlFor="">Password : </label>
@@ -26,14 +53,17 @@ const Login = (props) => {
                             placeholder="Enter your password"
                             onChange={(event) => setPassword(event.target.value)} />
                     </div>
-                </div>
-                <div className="googleLogIn">
-                    <button onClick={props.signin}className="GoogleButton">Log In With Google</button>
+                    <div className="LoginButton">
+                        <button type="submit">Log In</button>
+                    </div>
                 </div>
             </form>
+            <div className="googleLogIn">
+                <button onClick={(event) => handleLogInGoogle(event)} className="GoogleButton">Log In With Google</button>
+            </div>
         </div>
     )
 
-    export default Login
-
 }
+
+export default Login
