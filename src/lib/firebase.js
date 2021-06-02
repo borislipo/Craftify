@@ -26,13 +26,10 @@ export const signUpWithEmailAndPassword = async (user) => {
 };
 
 export const signInWithEmailAndPassword = async (email, password) => {
-	const authUser = await auth.signInWithEmailAndPassword(email, password);
-	const user = await getUserDocument(authUser.user.uid);
-	user.uid = authUser.user.uid;
-	return user;
+	await auth.signInWithEmailAndPassword(email, password);
 };
 
-const getUserDocument = async (uid) => {
+export const getUserDocument = async (uid) => {
 	const usersRef = db.collection('users').doc(uid);
 	const doc = await usersRef.get();
 	return doc.data();
@@ -56,8 +53,16 @@ export const signInWithGoogle = async () => {
 	const authResponse = await auth.signInWithPopup(provider);
 	const { user } = authResponse;
 	await generateUserDocument(user, { name: user.displayName });
-	const currentUser = await getUserDocument(user.uid);
-	return currentUser;
+};
+
+export const onAuthChanged = async (userProviderCallback) => {
+	try {
+		auth.onAuthStateChanged(async (userAuth) => {
+			userProviderCallback(userAuth);
+		});
+	} catch (err) {
+		userProviderCallback(null);
+	}
 };
 
 //returns the url of the photo
