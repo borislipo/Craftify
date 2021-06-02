@@ -1,0 +1,15 @@
+
+.HomeButton{
+    height: fit-content;
+    justify-content: space-between;
+    
+}
+
+.HomeButton > * >* {
+    height: 100%;
+    box-shadow: 0px 0px 21px 5px rgba(0,0,0,0.1);
+}
+
+.HomeHeader {
+    border-bottom: 1px black solid;
+}
