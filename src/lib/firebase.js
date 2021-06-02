@@ -26,7 +26,15 @@ export const signUpWithEmailAndPassword = async (user) => {
 };
 
 export const signInWithEmailAndPassword = async (email, password) => {
-	await auth.signInWithEmailAndPassword(email, password);
+	const authUser = await auth.signInWithEmailAndPassword(email, password);
+	const user = await getUserDocument(authUser.user.uid);
+	return user;
+};
+
+const getUserDocument = async (uid) => {
+	const usersRef = db.collection('users').doc(uid);
+	const doc = await usersRef.get();
+	return doc.data();
 };
 
 const generateUserDocument = async (user, additionalData) => {
@@ -36,19 +44,34 @@ const generateUserDocument = async (user, additionalData) => {
 	const snapshot = await userRef.get();
 	if (!snapshot.exists) {
 		const { email } = user;
-		try {
-			await userRef.set({
-				email,
-				name
-			});
-		} catch (error) {
-			console.error(error);
-		}
+		await userRef.set({
+			email,
+			name
+		});
 	}
 };
 
 export const signInWithGoogle = async () => {
 	const authResponse = await auth.signInWithPopup(provider);
 	const { user } = authResponse;
-	generateUserDocument(user, { name: user.displayName });
+	await generateUserDocument(user, { name: user.displayName });
+	const currentUser = await getUserDocument(user.uid);
+	return currentUser;
+};
+
+//returns the url of the photo
+export const uploadPhoto = async (userId, photo) => {
+	const eventRef = storage.ref('photos');
+	const profileRef = eventRef.child(`${userId}/${photo.name}`);
+	await profileRef.put(photo);
+	await savePhotoInDB(photo.name, userId);
+	return await profileRef.getDownloadURL();
+};
+
+const savePhotoInDB = async (photoPath, userId) => {
+	const userRef = db.collection('users').doc(`${userId}`).collection('photos');
+	await userRef.add({
+		photoPath,
+		createdDate: new Date()
+	});
 };
