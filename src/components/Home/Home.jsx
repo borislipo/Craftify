@@ -3,7 +3,6 @@ import { Row, Col, Container, Button, Image, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import Camera from '../Camera/Camera';
 import Preview from '../Preview/Preview';
-import Upload from '../Upload/Upload';
 import './Home.css';
 
 function Home(props) {
@@ -25,7 +24,9 @@ function Home(props) {
 	return (
 		<React.Fragment>
 			<div className="d-flex flex-column HomeWrapper">
+				<div className="headerWrapper">
 				<div className="Logo">CRAFTIFY</div>
+				</div>
 				<div className="Feed">
 					<div>You don't have any crafts yet</div>
 					<img className="SadIcon" src="/sad.png" alt="sad" />

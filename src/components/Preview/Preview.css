@@ -1,24 +1,21 @@
 .Preview {
-    display: flex;
-    align-items: center;
-    background: rgba(187, 180, 180, 0.4);
-    height: 64px;
-    padding: 0 5px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 64px;
 }
 
 .UploadIcon {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }
 
 .PreviewImageWrapper {
-    display: flex;
-    flex-grow: 1;
-    background: rgba(0, 0, 0, 0.5);
-    margin: 0 3px;
+  display: flex;
+  flex-grow: 1;
 }
 
 .PreviewImage {
-    height: 64px;
-    width: 64px;
+  height: 64px;
+  width: 64px;
 }

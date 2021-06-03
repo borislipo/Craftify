@@ -1,4 +1,4 @@
-import UploadList from '../Upload/UploadList';
+
 import './Preview.css';
 
 function Preview(props) {

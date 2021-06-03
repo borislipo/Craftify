@@ -1,64 +1,74 @@
 .HomeButton {
-    height: fit-content;
-    justify-content: space-between;
+  height: fit-content;
+  justify-content: space-between;
 }
 
-.HomeButton>*>* {
-    height: 80px;
-    width: 80px;
-    padding: 5px;
-    box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.1);
+.HomeButton > * > * {
+  height: 80px;
+  width: 80px;
+  padding: 5px;
+  box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.1);
 }
 
 .Logo {
-    font-size: 42px;
-    color: rgba(9, 121, 93, 0.9026961126247374);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    align-self: center;
+  font-size: 42px;
+  color: rgba(9, 121, 93, 0.9026961126247374);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  align-self: center;
 }
 
 .HeaderContainer {
-    border-bottom: 1px black solid;
-    margin-bottom: 200px;
+  border-bottom: 1px black solid;
+  margin-bottom: 200px;
 }
 
 .HomeContainer {
-    width: max-content;
+  width: max-content;
 }
 
 .HomeWrapper {
-    justify-content: space-between;
-    height: 100vh;
-    padding: 20px 0;
+  justify-content: space-between;
+  height: 100vh;
 }
 
-.CameraWrapper {
-    border-top: 5px ridge rgba(28, 110, 164, 0.12);
-}
-
-.CameraWrapper>* {
-    margin-top: 10px;
+.CameraWrapper > * {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  background-color: #2c0242;
 }
 
 .SadIcon {
-    height: 64px;
-    width: 64px;
+  height: 64px;
+  width: 64px;
 }
 
 .Feed {
-    border-top: 5px ridge rgba(195, 214, 226, 0.12);
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 93, 0.9026961126247374) 0%, rgba(0, 212, 255, 1) 100%);
+  border-top: 5px ridge rgba(195, 214, 226, 0.12);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
 }
 
 .PreviewContainer {
-    background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 93, 0.9026961126247374) 0%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    30deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 93, 0.9026961126247374) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.Feed>* {
-    margin-bottom: 5px;
+.Feed > * {
+  margin-bottom: 5px;
+}
+
+.headerWrapper{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    
+
 }

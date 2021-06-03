@@ -4,4 +4,7 @@ body, html {
 
 .App {
   height: 100vh;
+  background: linear-gradient(
+190deg
+, rgb(245 70 102) 0%, rgb(134 189 247 / 98%) 100%);
 }
