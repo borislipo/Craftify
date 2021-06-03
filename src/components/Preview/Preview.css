@@ -1,7 +1,9 @@
 .Preview {
     display: flex;
     align-items: center;
-    background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 93, 0.9026961126247374) 0%, rgba(0, 212, 255, 1) 100%);
+    background: rgba(187, 180, 180, 0.4);
+    height: 64px;
+    padding: 0 5px;
 }
 
 .UploadIcon {
@@ -11,7 +13,6 @@
 
 .PreviewImageWrapper {
     display: flex;
-    height: 64px;
     flex-grow: 1;
     background: rgba(0, 0, 0, 0.5);
     margin: 0 3px;

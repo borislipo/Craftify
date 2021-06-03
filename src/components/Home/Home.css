@@ -55,6 +55,10 @@
     background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 93, 0.9026961126247374) 0%, rgba(0, 212, 255, 1) 100%);
 }
 
+.PreviewContainer {
+    background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 93, 0.9026961126247374) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
 .Feed>* {
     margin-bottom: 5px;
 }

@@ -30,7 +30,10 @@ function Home(props) {
 					<div>You don't have any crafts yet</div>
 					<img className="SadIcon" src="/sad.png" alt="sad" />
 				</div>
-				<Preview photosArray={photosArray} />
+				<div>
+					<Preview photosArray={photosArray} />
+				</div>
+
 				<div className="CameraWrapper">
 					<Camera handlePhoto={handlePhoto} />
 				</div>

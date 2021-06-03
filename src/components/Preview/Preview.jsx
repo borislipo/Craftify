@@ -6,29 +6,9 @@ function Preview(props) {
 	return (
 		<div className="Preview">
 			<div className="PreviewImageWrapper">
-				{photosArray[0] && (
-					<img className="PreviewImage" src={URL.createObjectURL(photosArray[0])} alt="photo" />
-				)}
-			</div>
-			<div className="PreviewImageWrapper">
-				{photosArray[1] && (
-					<img className="PreviewImage" src={URL.createObjectURL(photosArray[0])} alt="photo" />
-				)}
-			</div>
-			<div className="PreviewImageWrapper">
-				{photosArray[2] && (
-					<img className="PreviewImage" src={URL.createObjectURL(photosArray[0])} alt="photo" />
-				)}
-			</div>
-			<div className="PreviewImageWrapper">
-				{photosArray[3] && (
-					<img className="PreviewImage" src={URL.createObjectURL(photosArray[0])} alt="photo" />
-				)}
-			</div>
-			<div className="PreviewImageWrapper">
-				{photosArray[4] && (
-					<img className="PreviewImage" src={URL.createObjectURL(photosArray[0])} alt="photo" />
-				)}
+				{photosArray.map((image) => {
+					return <img className="PreviewImage" src={URL.createObjectURL(image)} alt="photo" />;
+				})}
 			</div>
 			<img className="UploadIcon" src="/upload.png" alt="upload" />
 		</div>
