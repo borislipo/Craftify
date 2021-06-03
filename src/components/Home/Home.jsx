@@ -18,13 +18,11 @@ function Home(props) {
 	};
 
 	const handleUpload = async () => {
-		setResult('paper, bottle');
-		// for (const photo of photosArray) {
-		// 	const url = await uploadPhoto(photo);
-		// 	const result = await getCraftResults(url);
-		// 	setResult(result.data);
-
-		// }
+		for (const photo of photosArray) {
+			const url = await uploadPhoto(photo);
+			const result = await getCraftResults(url);
+			setResult(result.data);
+		}
 	};
 
 	return (
