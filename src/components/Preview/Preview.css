@@ -1,8 +1,9 @@
 .Preview {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  height: 64px;
+  height: 90px;
+  background: #ffffff5e;
+  padding: 10px 5px;
 }
 
 .UploadIcon {
@@ -18,4 +19,17 @@
 .PreviewImage {
   height: 64px;
   width: 64px;
+}
+
+.uploadIconWrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: #61e9ff;
+  color: rgb(245, 244, 244);
+  display: flex;
+  padding: 1.6%;
+  justify-self: center;
+  margin-right: 10px;
+  box-shadow: 2px 2px 4px 6px rgb(16 1 74 / 24%);
 }

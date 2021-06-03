@@ -1,38 +1,54 @@
-import React, { useState, useRef } from 'react';
-import { Row, Col, Container, Button, Image, Modal } from 'react-bootstrap';
+import React, { useState } from 'react';
+import './Home.css';
 import { useHistory } from 'react-router-dom';
+import { getCraftResults } from '../../lib/craftsApi';
+import { uploadPhoto } from '../../lib/firebase';
 import Camera from '../Camera/Camera';
 import Preview from '../Preview/Preview';
-import './Home.css';
+import ResultsArray from '../Results/ResultsArray';
 
 function Home(props) {
 	const history = useHistory();
 	const { userName } = props;
+	const [ result, setResult ] = useState('');
 	const [ photosArray, setPhotosArray ] = useState([]);
-	const [ uploadShow, setUploadShow ] = useState(false);
 
 	const handlePhoto = (e) => {
 		if (e.target.files[0]) setPhotosArray((prev) => [ ...prev, e.target.files[0] ]);
 	};
 
-	const handleUpload = () => {
-		setUploadShow(true);
+	const handleUpload = async () => {
+		setResult('paper, bottle');
+		// for (const photo of photosArray) {
+		// 	const url = await uploadPhoto(photo);
+		// 	const result = await getCraftResults(url);
+		// 	setResult(result.data);
+
+		// }
 	};
-	const handleClose = () => {
-		setUploadShow(false);
-	};
+
 	return (
 		<React.Fragment>
 			<div className="d-flex flex-column HomeWrapper">
 				<div className="headerWrapper">
-				<div className="Logo">CRAFTIFY</div>
+					<div className="Logo">
+						<span className="span1">C</span>
+						<span className="span2">R</span>
+						<span className="span3">A</span>
+						<span className="span4">F</span>
+						<span className="span5">T</span>
+						<span className="span6">I</span>
+						<span className="span7">F</span>
+						<span className="span8">Y</span>
+						<img src="/logo.png" className="logoImg" />
+					</div>
 				</div>
 				<div className="Feed">
-					<div>You don't have any crafts yet</div>
-					<img className="SadIcon" src="/sad.png" alt="sad" />
+					{!result && <div>You don't have any crafts yet</div>}
+					{result && <ResultsArray labels={result} />}
 				</div>
 				<div>
-					<Preview photosArray={photosArray} />
+					<Preview photosArray={photosArray} onUpload={handleUpload} />
 				</div>
 
 				<div className="CameraWrapper">

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import './Camera.css';
 
 function Camera(props) {
 	const { handlePhoto } = props;
@@ -16,7 +17,16 @@ function Camera(props) {
 				style={{ display: 'none' }}
 				onChange={handlePhoto}
 			/>
-			<img src="/camera.png" alt="camera-icon" height="54px" width="54px" onClick={handleCamera} />
+			<div className="cameraIcon">
+				<img
+					src="/camera.png"
+					alt="camera-icon"
+					height="54px"
+					width="54px"
+					onClick={handleCamera}
+					className="camImg"
+				/>
+			</div>
 		</div>
 	);
 }

@@ -3,7 +3,7 @@
   justify-content: space-between;
 }
 
-.HomeButton > * > * {
+.HomeButton>*>* {
   height: 80px;
   width: 80px;
   padding: 5px;
@@ -11,10 +11,17 @@
 }
 
 .Logo {
-  font-size: 42px;
-  color: rgba(9, 121, 93, 0.9026961126247374);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 4rem;
+  font-family: sans-serif;
   align-self: center;
+}
+
+.logoImg {
+  width: 55px;
+  height: 55px;
+  /* padding-left: 10px; */
+  margin-left: 15px;
+  margin-bottom: 5px;
 }
 
 .HeaderContainer {
@@ -28,18 +35,18 @@
 
 .HomeWrapper {
   justify-content: space-between;
-  height: 100vh;
+  height: 93vh;
 }
 
-.CameraWrapper > * {
+.CameraWrapper>* {
   padding-top: 1vh;
   padding-bottom: 1vh;
-  background-color: #2c0242;
+  background-color: #280046;
 }
 
 .SadIcon {
-  height: 64px;
-  width: 64px;
+  height: 58px;
+  width: 58px;
 }
 
 .Feed {
@@ -50,25 +57,59 @@
   justify-content: center;
   align-items: center;
   background: transparent;
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: 2c0242;
+  text-transform: uppercase;
+  color: rgb(0, 21, 59);
+  font-weight: bold;
+  overflow-y: auto;
 }
 
 .PreviewContainer {
-  background: linear-gradient(
-    30deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 121, 93, 0.9026961126247374) 0%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: linear-gradient( 30deg, rgba(2, 0, 36, 1) 0%, rgba(10, 59, 47, 0.903) 0%, rgba(0, 212, 255, 1) 100%);
 }
 
-.Feed > * {
-  margin-bottom: 5px;
+.Feed>* {
+  margin-bottom: 20px;
 }
 
-.headerWrapper{
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  /* background-color: #280046; */
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
 
+.span1 {
+  color: red;
+}
+
+.span2 {
+  color: rgb(250, 142, 0);
+}
+
+.span3 {
+  color: rgb(218, 218, 19);
+}
+
+.span4 {
+  color: rgb(56, 184, 56);
+}
+
+.span5 {
+  color: rgb(13, 209, 216);
+}
+
+.span6 {
+  color: blue;
+}
+
+.span7 {
+  color: rgb(133, 10, 133);
+}
+
+.span8 {
+  color: rgb(238, 135, 152);
 }

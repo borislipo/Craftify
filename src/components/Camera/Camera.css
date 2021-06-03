@@ -1,0 +1,9 @@
+.cameraIcon {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: #61e9ff;
+  color: rgb(245, 244, 244);
+  display: flex;
+  padding: 1.5%;
+}

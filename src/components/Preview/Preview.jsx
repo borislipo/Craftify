@@ -1,8 +1,7 @@
-
 import './Preview.css';
 
 function Preview(props) {
-	const { photosArray } = props;
+	const { photosArray, onUpload } = props;
 	return (
 		<div className="Preview">
 			<div className="PreviewImageWrapper">
@@ -10,7 +9,9 @@ function Preview(props) {
 					return <img className="PreviewImage" src={URL.createObjectURL(image)} alt="photo" />;
 				})}
 			</div>
-			<img className="UploadIcon" src="/upload.png" alt="upload" />
+			<div className="uploadIconWrapper">
+				<img className="UploadIcon" src="/upload.png" alt="upload" onClick={onUpload} />
+			</div>
 		</div>
 	);
 }

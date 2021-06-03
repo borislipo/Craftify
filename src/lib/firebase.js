@@ -1,8 +1,9 @@
+import axios from 'axios';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
-//import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -66,12 +67,27 @@ export const onAuthChanged = async (userProviderCallback) => {
 };
 
 //returns the url of the photo
-export const uploadPhoto = async (userId, photo) => {
-	const eventRef = storage.ref('photos');
-	const profileRef = eventRef.child(`${userId}/${photo.name}`);
-	await profileRef.put(photo);
-	await savePhotoInDB(photo.name, userId);
-	return await profileRef.getDownloadURL();
+export const uploadPhoto = async (photo) => {
+	// const eventRef = storage.ref('photos');
+	// const profileRef = eventRef.child(`${'photos'}/${photo.name}`);
+	// await profileRef.put(photo);
+	// //await savePhotoInDB(photo.name, userId);
+	// return await profileRef.getDownloadURL();
+	const data = new FormData();
+	data.append('file', photo);
+	data.append('cloud_name', 'dleoqo9bp');
+	data.append('api_key', '652645468693867');
+	data.append('public_id', uuid());
+	data.append('upload_preset', 'rv798qm9');
+
+	let response = '';
+	try {
+		response = await axios.post('https://api.cloudinary.com/v1_1/dleoqo9bp/image/upload', data);
+	} catch (err) {
+		console.log(err.message);
+	}
+
+	return response.data.url;
 };
 
 const savePhotoInDB = async (photoPath, userId) => {
