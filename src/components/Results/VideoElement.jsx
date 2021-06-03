@@ -6,27 +6,26 @@ function VideoElement(props) {
 	const baseURL = `https://www.youtube.com/embed/${VideoID}`;
 	return (
 		<React.Fragment>
-			<Card>
+			<Card className="card">
 				<Card.Body>
 					<Container>
-						<iframe title={VideoTitle} width="250" height="250" src={baseURL} />
+						<iframe title={VideoTitle} width="400" height="250" src={baseURL} />
 					</Container>
-					<Row>
-						<Col>
+					<div className="VideoIconsWrapper">
 							<Image
+							className="shareIcon"
 								height="20"
 								width="20"
 								src="https://res.cloudinary.com/drcoopxns/image/upload/v1622715228/share_lrhigs.png"
 							/>
-						</Col>
-						<Col>
+						
 							<Image
+							className="likeIcon"
 								height="20"
 								width="20"
 								src="https://res.cloudinary.com/drcoopxns/image/upload/v1622715180/mg_oxdvqa.png"
 							/>
-						</Col>
-					</Row>
+						</div>
 				</Card.Body>
 			</Card>
 		</React.Fragment>
